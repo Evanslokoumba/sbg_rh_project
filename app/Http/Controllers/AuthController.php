@@ -94,7 +94,7 @@ class AuthController extends Controller
 
                 // On pointe vers la connexion web (native à retrouver dans config/auth.php)
                 Auth::shouldUse('web');
-                if ($rhUser = \App\ModelS\User2::where('Identifiant',$request->get('email'))->first())
+                if ($rhUser = \App\Models\User2::where('Identifiant',$request->get('email'))->first())
                 {
                     # code...
                     //dd('OK sur RH');
@@ -107,7 +107,7 @@ class AuthController extends Controller
                 if($nativieUser   instanceof  User)
                 {// S'il a déjà un compte
 
-                    //$Mdp = \App\User::where('MATRICULE',$request->get('email'))->get();
+                    //$Mdp = \App\Models\User::where('MATRICULE',$request->get('email'))->get();
 
                     $credentials = [
                         'MATRICULE' => $request->get('email'),
@@ -119,7 +119,7 @@ class AuthController extends Controller
                     { // On lance la tentative de  connexion sur l'annuaire (Si elle est concluante)
                         //dd('Pas présent dans l'annuaire ');
 
-                        $rhUser = \App\ModelS\User2::where('Identifiant',$request->get('email'))->first();
+                        $rhUser = \App\Models\User2::where('Identifiant',$request->get('email'))->first();
                         $presonnalUser = \App\Models\User::where('MATRICULE',$request->get('email'))
                             ->update([
                                 'NOM' => $rhUser->Nom,
