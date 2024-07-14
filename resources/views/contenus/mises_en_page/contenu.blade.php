@@ -73,7 +73,7 @@
 
                         <button class="btn navbar-toggler-humburger-icon navbar-vertical-toggle" data-bs-toggle="tooltip" data-bs-placement="left" title="Basculer"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span></button>
 
-                    </div><a class="navbar-brand" href="index.html">
+                    </div><a class="navbar-brand" href="#">
                         <div class="d-flex align-items-center py-3"><img class="me-2" src="{{asset('rh/assets/img/x.png')}}" alt="" width="140" /><span class="font-sans-serif text-primary"></span>
                         </div>
                     </a>
@@ -101,8 +101,8 @@
                                 </a>
                                 <!-- more inner pages-->
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="dashboard/crm.html">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">CRM</span>
+                            <li class="nav-item"><a class="nav-link" href="/test_pageII">
+                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page II</span>
                                 </div>
                                 </a>
                                 <!-- more inner pages-->
@@ -114,7 +114,7 @@
                         <li class="nav-item">
                             <!-- label-->
                             <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                            <div class="col-auto navbar-vertical-label">App
+                            <div class="col-auto navbar-vertical-label">Demandes & Traitement de formations
                             </div>
                             <div class="col ps-0">
                                 <hr class="mb-0 navbar-vertical-divider" />
@@ -271,7 +271,7 @@
                         <li class="nav-item">
                             <!-- label-->
                             <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                            <div class="col-auto navbar-vertical-label">Pages
+                            <div class="col-auto navbar-vertical-label">Planifications
                             </div>
                             <div class="col ps-0">
                                 <hr class="mb-0 navbar-vertical-divider" />
@@ -490,7 +490,7 @@
                         <li class="nav-item">
                             <!-- label-->
                             <div class="row navbar-vertical-label-wrapper mt-3 mb-2">
-                            <div class="col-auto navbar-vertical-label">Modules
+                            <div class="col-auto navbar-vertical-label">Modules supplémentaires
                             </div>
                             <div class="col ps-0">
                                 <hr class="mb-0 navbar-vertical-divider" />
@@ -854,7 +854,7 @@
                     <!-- pied de page -->
                         <footer class="footer">
                             <div class="col-12 col-sm-auto text-center">
-                                <p class="mb-0 text-600">SOBRAGA</p>
+                                <p class="mb-0 text-600">--- SOBRAGA ---</p>
                             </div>
                         </footer>
                     <!-- fin pied de page -->
@@ -866,6 +866,9 @@
 
         <!-- PARTIE MENU DEROULANT DROIT -->
         <div class="offcanvas offcanvas-end settings-panel border-0" id="settings-offcanvas" tabindex="-1" aria-labelledby="settings-offcanvas">
+        
+
+        
         <div class="offcanvas-header settings-panel-header bg-shape">
             <div class="z-1 py-1">
                 <div class="d-flex justify-content-between align-items-center mb-1">
@@ -899,29 +902,43 @@
             </div>
             </div>
 
-            <hr />
-
             <h5 class="fs-0 d-flex align-items-center">Style de barre de navigation verticale</h5>
             <p class="fs--1 mb-0">Basculez entre les styles pour votre barre de navigation verticale </p>
             <div class="btn-group d-block w-100 btn-group-navbar-style">
-            <div class="row gx-2">
-                <div class="col-6">
-                <input class="btn-check" id="navbar-style-transparent" type="radio" name="navbarStyle" value="transparent" data-theme-control="navbarStyle" />
-                <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-transparent"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/default.png')}}" alt="" /><span class="label-text"> Transparent</span></label>
+                <div class="row gx-2">
+                    <div class="col-6">
+                    <input class="btn-check" id="navbar-style-transparent" type="radio" name="navbarStyle" value="transparent" data-theme-control="navbarStyle" />
+                    <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-transparent"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/default.png')}}" alt="" /><span class="label-text"> Transparent</span></label>
+                    </div>
+                    <div class="col-6">
+                    <input class="btn-check" id="navbar-style-inverted" type="radio" name="navbarStyle" value="inverted" data-theme-control="navbarStyle" />
+                    <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-inverted"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/inverted.png')}}" alt="" /><span class="label-text"> Inverted</span></label>
+                    </div>
+                    <div class="col-6">
+                    <input class="btn-check" id="navbar-style-card" type="radio" name="navbarStyle" value="card" data-theme-control="navbarStyle" />
+                    <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-card"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/card.png')}}" alt="" /><span class="label-text"> Card</span></label>
+                    </div>
+                    <div class="col-6">
+                    <input class="btn-check" id="navbar-style-vibrant" type="radio" name="navbarStyle" value="vibrant" data-theme-control="navbarStyle" />
+                    <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-vibrant"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/vibrant.png')}}" alt="" /><span class="label-text"> Vibrant</span></label>
+                    </div>
                 </div>
-                <div class="col-6">
-                <input class="btn-check" id="navbar-style-inverted" type="radio" name="navbarStyle" value="inverted" data-theme-control="navbarStyle" />
-                <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-inverted"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/inverted.png')}}" alt="" /><span class="label-text"> Inverted</span></label>
+
+                <hr/>
+
+                <div class="offcanvas-body scrollbar-overlay px-x1 h-100" id="themeController">
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex align-items-start"><img class="me-2" src="{{asset('rh/assets/img/icons/arrows-h.svg')}}" width="20" alt="" />
+                        <div class="flex-1">
+                          <h5 class="fs-0">Disposition fluide</h5>
+                          <p class="fs--1 mb-0">Afficher le contenu plein écran </p><a class="fs--1" href="documentation/customization/configuration.html"></a>
+                        </div>
+                      </div>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input ms-0" id="mode-fluid" type="checkbox" data-theme-control="isFluid" />
+                      </div>
+                    </div>
                 </div>
-                <div class="col-6">
-                <input class="btn-check" id="navbar-style-card" type="radio" name="navbarStyle" value="card" data-theme-control="navbarStyle" />
-                <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-card"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/card.png')}}" alt="" /><span class="label-text"> Card</span></label>
-                </div>
-                <div class="col-6">
-                <input class="btn-check" id="navbar-style-vibrant" type="radio" name="navbarStyle" value="vibrant" data-theme-control="navbarStyle" />
-                <label class="btn d-block w-100 btn-navbar-style fs--1" for="navbar-style-vibrant"> <img class="img-fluid img-prototype" src="{{asset('rh/assets/img/generic/vibrant.png')}}" alt="" /><span class="label-text"> Vibrant</span></label>
-                </div>
-            </div>
             </div>
         </div>
         </div>

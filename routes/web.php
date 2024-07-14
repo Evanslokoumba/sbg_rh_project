@@ -20,6 +20,13 @@ Route::get('/', function () {
     return view('contenus/pages/connexion');
 });
 */
+Route::get('/test_accueil', function () {
+    return view('contenus/pages/accueil');
+});
+
+Route::get('/test_pageII', function () {
+    return view('welcome');
+});
 
 //Route test
 Route::get('connexion_page', [RedirectionController::class, 'create']);

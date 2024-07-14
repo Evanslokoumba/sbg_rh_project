@@ -80,7 +80,7 @@
                             
                                 <div class="row flex-between-center mb-2">
                                     
-                                    <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">or</span> <span><a href="/">Test accueil</a></span></div>
+                                    <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">or</span> <span><a href="/test_accueil">Test accueil</a></span></div>
                                 </div>
                                     <form action="{{route('auth.login')}}" method="post" >
                                         @csrf
