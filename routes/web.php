@@ -29,13 +29,19 @@ Route::get('/test_pageII', function () {
 });
 
 //Route test
-Route::get('connexion_page', [RedirectionController::class, 'create']);
-Route::get('accueil_page', [RedirectionController::class, 'index']);
+Route::get('/connexion-page', [RedirectionController::class, 'create']);
+Route::get('/accueil_page', [RedirectionController::class, 'index']);
 
 
 #Route authentifications
 Route::get('/', [App\Http\Controllers\AuthController::class, 'seConnecter'])->name('/');;
 Route::post('/connexion', [App\Http\Controllers\AuthController::class, 'traiterInfos'])->name('auth.login');
+
+#Route acces pages
+Route::get('/creation-formulaire',[App\Http\Controllers\DemandeController::class,'creationFormulaire'])->name('formulaire');
+Route::get('/statut-valide',[App\Http\Controllers\DemandeController::class,'statutValidee'])->name('valide');
+Route::get('/statut-non-valide',[App\Http\Controllers\DemandeController::class,'statutNonValidee'])->name('non-valide');
+Route::get('/historiques',[App\Http\Controllers\DemandeController::class,'historiqueDemande'])->name('historiques');
 
 
 

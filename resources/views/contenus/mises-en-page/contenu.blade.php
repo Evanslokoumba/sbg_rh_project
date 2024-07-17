@@ -95,7 +95,7 @@
                                 </a>
                                 <!-- more inner pages-->
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('connexion_page')}}">
+                            <li class="nav-item"><a class="nav-link" href="{{url('connexion-page')}}">
                                 <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page connexion</span>
                                 </div>
                                 </a>
@@ -132,7 +132,7 @@
                             </div>
                             </a>
                             <ul class="nav collapse" id="demande">
-                                <li class="nav-item"><a class="nav-link" href="#">
+                                <li class="nav-item"><a class="nav-link" href="{{url('/creation-formulaire')}}">
                                     <div class="d-flex align-items-center">
                                         <span class="nav-link-icon">
                                             <span class="fas fa-edit"></span>
@@ -151,7 +151,7 @@
                             </div>
                             </a>
                             <ul class="nav collapse" id="statut">
-                                <li class="nav-item"><a class="nav-link" href="#">
+                                <li class="nav-item"><a class="nav-link" href="{{url('/statut-valide')}}">
                                     <div class="d-flex align-items-center">
                                         <span class="nav-link-icon">
                                             <span class="fas fa-check-circle"></span>
@@ -161,7 +161,7 @@
                                     </a>
                                     <!-- more inner pages-->
                                 </li>
-                                <li class="nav-item"><a class="nav-link" href="#">
+                                <li class="nav-item"><a class="nav-link" href="{{url('/statut-non-valide')}}">
                                         <div class="d-flex align-items-center">
                                         <span class="nav-link-icon">
                                             <span class="fas fa-times-circle"></span>
@@ -191,7 +191,7 @@
                                     </a>
                                 <!-- more inner pages-->
                                     <ul class="nav collapse" id="demande_soumise">
-                                        <li class="nav-item"><a class="nav-link" href="#">
+                                        <li class="nav-item"><a class="nav-link" href="{{url('/historiques')}}">
                                                 <div class="d-flex align-items-center">
                                                 <span class="nav-link-icon">
                                                     <span class="fas fa-list-alt"></span>
