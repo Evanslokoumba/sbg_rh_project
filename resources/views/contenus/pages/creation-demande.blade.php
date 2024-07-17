@@ -4,7 +4,7 @@
 
     <!--  CONTENUS AU CENTRE  -->
     <h2> Test contenu - Création formulaire </h2>
-    <div style="margin-left: 25%">
+    <div>
         <div class="col-lg-6 col-xl-12 col-xxl-6 h-100">
             <div class="d-flex mb-4"><span class="fa-stack me-2 ms-n1"><i class="fas fa-circle fa-stack-2x text-300"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-check-double"></i></span>
                 <div class="col">
@@ -15,8 +15,8 @@
             <div class="card theme-wizard h-100 mb-5">
                 <div class="card-header bg-body-tertiary pt-3 pb-2">
                     <ul class="nav justify-content-between nav-wizard">
-                        <li class="nav-item"><a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-validation-tab1" data-bs-toggle="tab" data-wizard-step="1"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Identification</span></a></li>
-                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab2" data-bs-toggle="tab" data-wizard-step="2"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-user"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Demande-contenu</span></a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-validation-tab1" data-bs-toggle="tab" data-wizard-step="1"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-user"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Identification</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab2" data-bs-toggle="tab" data-wizard-step="2"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-file-alt"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Contenu de demande</span></a></li>
                         <!-- BILLING
                         <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab3" data-bs-toggle="tab" data-wizard-step="3"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-dollar-sign"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Billing</span></a></li>
                         -->
@@ -25,9 +25,9 @@
                 </div>
                 <div class="card-body py-4" id="wizard-controller">
                     <div class="tab-content">
+
+
                         <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab1" id="bootstrap-wizard-validation-tab1">
-
-
                             <form method="post" action="#" class="needs-validation" novalidate="novalidate" data-wizard-form="1">
                                 @csrf
 
@@ -39,15 +39,15 @@
                                 <div class="row g-2">
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-password">Prénom(s) <span style="color: red">*</span></label>
-                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre prénom" required="required" id="bootstrap-wizard-validation-wizard-password" data-wizard-password="true" />
+                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Prénom(s) <span style="color: red">*</span></label>
+                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre prénom" required="required" id="bootstrap-wizard-validation-wizard-name" />
                                             <div class="invalid-feedback">Champ obligatoire</div>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-confirm-password">Matricule <span style="color: red">*</span></label>
-                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre matricule"  id="bootstrap-wizard-validation-wizard-confirm-password" data-wizard-confirm-password="true" />
+                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Matricule <span style="color: red">*</span></label>
+                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre matricule" required="required" id="bootstrap-wizard-validation-wizard-name" />
                                             <div class="invalid-feedback">Champ obligatoire</div>
                                         </div>
                                     </div>
@@ -58,56 +58,49 @@
                                     <div class="invalid-feedback">Champ obligatoire</div>
                                 </div>
                             </form>
-
-
                         </div>
+
+
                         <div class="tab-pane px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab2" id="bootstrap-wizard-validation-tab2">
                             <form data-wizard-form="2">
+                                <!-- UPLOAD FIELD
+                               <div class="mb-3">
+                                   <div class="row" data-dropzone="data-dropzone" data-options='{"maxFiles":1,"data":[{"name":"avatar.png","size":"54kb","url":"../../assets/img/team"}]}'>
+                                       <div class="fallback">
+                                           <input type="file" name="file" />
+                                       </div>
+                                       <div class="col-md-auto">
+                                           <div class="dz-preview dz-preview-single">
+                                               <div class="dz-preview-cover d-flex align-items-center justify-content-center mb-3 mb-md-0">
+                                                   <div class="avatar avatar-4xl"><img class="rounded-circle" src="../../assets/img/team/avatar.png" alt="..." data-dz-thumbnail="data-dz-thumbnail" /></div>
+                                                   <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
+                                               </div>
+                                           </div>
+                                       </div>
+                                       <div class="col-md">
+                                           <div class="dz-message dropzone-area px-2 py-3" data-dz-message="data-dz-message">
+                                               <div class="text-center"><img class="me-2" src="../../assets/img/icons/cloud-upload.svg" width="25" alt="" />Upload your profile picture
+                                                   <p class="mb-0 fs--1 text-400">Upload a 300x300 jpg image with <br />a maximum size of 400KB</p>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                               -->
                                 <div class="mb-3">
-                                    <div class="row" data-dropzone="data-dropzone" data-options='{"maxFiles":1,"data":[{"name":"avatar.png","size":"54kb","url":"../../assets/img/team"}]}'>
-                                        <div class="fallback">
-                                            <input type="file" name="file" />
-                                        </div>
-                                        <div class="col-md-auto">
-                                            <div class="dz-preview dz-preview-single">
-                                                <div class="dz-preview-cover d-flex align-items-center justify-content-center mb-3 mb-md-0">
-                                                    <div class="avatar avatar-4xl"><img class="rounded-circle" src="../../assets/img/team/avatar.png" alt="..." data-dz-thumbnail="data-dz-thumbnail" /></div>
-                                                    <div class="dz-progress"><span class="dz-upload" data-dz-uploadprogress=""></span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md">
-                                            <div class="dz-message dropzone-area px-2 py-3" data-dz-message="data-dz-message">
-                                                <div class="text-center"><img class="me-2" src="../../assets/img/icons/cloud-upload.svg" width="25" alt="" />Upload your profile picture
-                                                    <p class="mb-0 fs--1 text-400">Upload a 300x300 jpg image with <br />a maximum size of 400KB</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Intitulé de la demande <span style="color: red">*</span></label>
+                                    <input class="form-control" type="text" name="name" placeholder="Saisir l'intitulé du contenu" required="required" id="bootstrap-wizard-validation-wizard-phone" />
+                                    <div class="invalid-feedback">Champ obligatoire</div>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-gender">Gender</label>
-                                    <select class="form-select" name="gender" id="bootstrap-wizard-validation-gender">
-                                        <option value="">Select your gender ...</option>
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-phone">Phone</label>
-                                    <input class="form-control" type="text" name="phone" placeholder="Phone" id="bootstrap-wizard-validation-wizard-phone" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-datepicker">Date of Birth</label>
-                                    <input class="form-control datetimepicker" type="text" placeholder="dd/mm/yy" data-options='{"dateFormat":"dd/mm/yy","disableMobile":true}' id="bootstrap-wizard-validation-wizard-datepicker" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-address">Address</label>
-                                    <textarea class="form-control" rows="4" id="bootstrap-wizard-validation-wizard-address"></textarea>
+                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Description</label>
+                                    <textarea class="form-control" rows="4" id="bootstrap-wizard-validation-wizard-address" required="required" ></textarea>
+                                    <div class="invalid-feedback">Champ obligatoire</div>
                                 </div>
                             </form>
                         </div>
+
+
                         <!-- START BILLING -->
                         <!--
                         <div class="tab-pane px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab3" id="bootstrap-wizard-validation-tab3">
@@ -401,8 +394,10 @@
                             <div class="wizard-lottie-wrapper">
                                 <div class="lottie wizard-lottie mx-auto my-3" data-options='{"path":"../../assets/img/animated-icons/celebration.json"}'></div>
                             </div>
-                            <h4 class="mb-1">Your account is all set!</h4>
+                            <h4 class="mb-1">Demande soumise avec succès</h4>
+                            <!--
                             <p>Now you can access to your account</p><a class="btn btn-primary px-5 my-3" href="../../modules/forms/wizard.html">Start Over</a>
+                            -->
                         </div>
                     </div>
                 </div>
