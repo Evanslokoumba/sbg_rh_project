@@ -33,6 +33,8 @@ class AuthController extends Controller
         ];
 
         // On pointe vers la connexion ldap (annuaire à retrouver dans config/auth.php)
+        dd(Auth::shouldUse('ldap'));
+
         Auth::shouldUse('ldap');
 
         //Si l'utilisateur tente de se connecter avec les infos de l'AD, on verifie d'abord sa présence sur (Presonnel)
@@ -43,8 +45,8 @@ class AuthController extends Controller
             # code...Si l'utilisateur est bien présent sur la table (Présonnel)
             if (
                 $user instanceof \App\Models\User
-                && ($ldapuserTest   =   \App\Ldap\User::where('samaccountname',$request->get('email'))->first())
-                &&  $ldapuserTest   instanceof  \App\Ldap\User
+                && ($ldapuserTest   =   User::where('samaccountname',$request->get('email'))->first())
+                &&  $ldapuserTest   instanceof  User
             )
             {
 
@@ -57,7 +59,7 @@ class AuthController extends Controller
                 if (Auth::attempt($credentials))
                 { //Si la tentative de connexion est concluante
                     //dd('test de présence dans AD validé', Auth::user());
-                    $rhUser = \App\ModelS\User2::where('Identifiant',$request->get('email'))->first();
+                    $rhUser = \App\Models\User2::where('Identifiant',$request->get('email'))->first();
 
 
                     $presonnalUser = \App\Models\User::where('MATRICULE',$request->get('email'))

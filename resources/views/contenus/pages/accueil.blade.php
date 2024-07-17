@@ -1,8 +1,9 @@
-@extends('contenus/mises_en_page/contenu')
+@extends('contenus/mises-en-page/contenu')
 @section('bodycontent')
 <!--  CONTENUS AU CENTRE  -->
 <div class="row g-3 mb-3">
     <!-- quatre premiers blocs -->
+    <h2>Accueil</h2>
     <div class="col-md-6 col-xxl-3">
     <div class="card h-md-100 ecommerce-card-min-width">
         <div class="card-header pb-0">

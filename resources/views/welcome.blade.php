@@ -1,5 +1,5 @@
 
-@extends('contenus/mises_en_page/contenu')
+@extends('contenus/mises-en-page/contenu')
 @section('bodycontent')
 
 <!--  CONTENUS AU CENTRE  -->
@@ -7,5 +7,5 @@
 <!--  FIN CONTENUS AU CENTRE  -->
 
 @endsection
-    
+
 

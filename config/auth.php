@@ -81,40 +81,22 @@ return [
      // ...
 
     'providers' => [
+        // ...
 
         'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
-        ],
-
-        'ldap' => [
             'driver' => 'ldap',
-            'model' => App\Ldap\User::class
-        ],
-
-        /*
-         *
-         'ldap' => [
-            'driver' => 'ldap',
-            'model' => LdapRecord\Models\ActiveDirectory\User::class,
+            'model' => LdapRecord\Models\OpenLDAP\User::class,
             'rules' => [],
             'scopes' => [],
             'database' => [
                 'model' => App\Models\User::class,
                 'sync_passwords' => false,
                 'sync_attributes' => [
-                    'name' => 'cn',
-                    'email' => 'samaccountname',
+                    //'name' => 'cn',
+                    'email' => 'mail',
                 ],
             ],
         ],
-         * */
-
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
