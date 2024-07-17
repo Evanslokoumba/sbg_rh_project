@@ -8,53 +8,58 @@
         <div class="col-lg-6 col-xl-12 col-xxl-6 h-100">
             <div class="d-flex mb-4"><span class="fa-stack me-2 ms-n1"><i class="fas fa-circle fa-stack-2x text-300"></i><i class="fa-inverse fa-stack-1x text-primary fas fa-check-double"></i></span>
                 <div class="col">
-                    <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">With Validation</span><span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-n1"></span></h5>
-                    <p class="mb-0">You can easily show your stats content by using these cards.</p>
+                    <h5 class="mb-0 text-primary position-relative"><span class="bg-200 dark__bg-1100 pe-3">Formulaire d'enregisrement de demandes</span><span class="border position-absolute top-50 translate-middle-y w-100 start-0 z-n1"></span></h5>
+                    <p class="mb-0">Veuillez remplir progressivement les formulaires en respectant les directives de chaque pages.</p>
                 </div>
             </div>
             <div class="card theme-wizard h-100 mb-5">
                 <div class="card-header bg-body-tertiary pt-3 pb-2">
                     <ul class="nav justify-content-between nav-wizard">
-                        <li class="nav-item"><a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-validation-tab1" data-bs-toggle="tab" data-wizard-step="1"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Account</span></a></li>
-                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab2" data-bs-toggle="tab" data-wizard-step="2"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-user"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Personal</span></a></li>
+                        <li class="nav-item"><a class="nav-link active fw-semi-bold" href="#bootstrap-wizard-validation-tab1" data-bs-toggle="tab" data-wizard-step="1"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-lock"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Identification</span></a></li>
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab2" data-bs-toggle="tab" data-wizard-step="2"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-user"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Demande-contenu</span></a></li>
+                        <!-- BILLING
                         <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab3" data-bs-toggle="tab" data-wizard-step="3"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-dollar-sign"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Billing</span></a></li>
-                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab4" data-bs-toggle="tab" data-wizard-step="4"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-thumbs-up"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Done</span></a></li>
+                        -->
+                        <li class="nav-item"><a class="nav-link fw-semi-bold" href="#bootstrap-wizard-validation-tab4" data-bs-toggle="tab" data-wizard-step="4"><span class="nav-item-circle-parent"><span class="nav-item-circle"><span class="fas fa-thumbs-up"></span></span></span><span class="d-none d-md-block mt-1 fs--1">Terminé</span></a></li>
                     </ul>
                 </div>
                 <div class="card-body py-4" id="wizard-controller">
                     <div class="tab-content">
                         <div class="tab-pane active px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab1" id="bootstrap-wizard-validation-tab1">
-                            <form class="needs-validation" novalidate="novalidate" data-wizard-form="1">
+
+
+                            <form method="post" action="#" class="needs-validation" novalidate="novalidate" data-wizard-form="1">
+                                @csrf
+
                                 <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Name</label>
-                                    <input class="form-control" type="text" name="name" placeholder="John Smith" id="bootstrap-wizard-validation-wizard-name" />
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Email*</label>
-                                    <input class="form-control" type="email" name="email" placeholder="Email address" pattern="^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$" required="required" id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
-                                    <div class="invalid-feedback">You must add email</div>
+                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-name">Nom(s) <span style="color: red">*</span></label>
+                                    <input class="form-control" type="text" name="name" placeholder="Saisir votre nom" required="required" id="bootstrap-wizard-validation-wizard-name" />
+                                    <div class="invalid-feedback">Champ obligatoire</div>
                                 </div>
                                 <div class="row g-2">
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-password">Password*</label>
-                                            <input class="form-control" type="password" name="password" placeholder="Password" required="required" id="bootstrap-wizard-validation-wizard-password" data-wizard-password="true" />
-                                            <div class="invalid-feedback">Please enter password</div>
+                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-password">Prénom(s) <span style="color: red">*</span></label>
+                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre prénom" required="required" id="bootstrap-wizard-validation-wizard-password" data-wizard-password="true" />
+                                            <div class="invalid-feedback">Champ obligatoire</div>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="mb-3">
-                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-confirm-password">Confirm Password*</label>
-                                            <input class="form-control" type="password" name="confirmPassword" placeholder="Confirm Password" required="required" id="bootstrap-wizard-validation-wizard-confirm-password" data-wizard-confirm-password="true" />
-                                            <div class="invalid-feedback">Passwords need to match</div>
+                                            <label class="form-label" for="bootstrap-wizard-validation-wizard-confirm-password">Matricule <span style="color: red">*</span></label>
+                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre matricule"  id="bootstrap-wizard-validation-wizard-confirm-password" data-wizard-confirm-password="true" />
+                                            <div class="invalid-feedback">Champ obligatoire</div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="terms" required="required" checked="checked" id="bootstrap-wizard-validation-wizard-checkbox" />
-                                    <label class="form-check-label" for="bootstrap-wizard-validation-wizard-checkbox">I accept the <a href="#!">terms </a>and <a href="#!">privacy policy</a></label>
+                                <div class="mb-3">
+                                    <label class="form-label" for="bootstrap-wizard-validation-wizard-email">Direction <span style="color: red">*</span></label>
+                                    <input class="form-control" type="text" name="name" placeholder="Choisir votre direction" required="required" id="bootstrap-wizard-validation-wizard-email" data-wizard-validate-email="true" />
+                                    <div class="invalid-feedback">Champ obligatoire</div>
                                 </div>
                             </form>
+
+
                         </div>
                         <div class="tab-pane px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab2" id="bootstrap-wizard-validation-tab2">
                             <form data-wizard-form="2">
@@ -103,6 +108,8 @@
                                 </div>
                             </form>
                         </div>
+                        <!-- START BILLING -->
+                        <!--
                         <div class="tab-pane px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab3" id="bootstrap-wizard-validation-tab3">
                             <form class="form-validation" data-wizard-form="2">
                                 <div class="row g-2">
@@ -388,6 +395,8 @@
                                 </div>
                             </form>
                         </div>
+                        -->
+                        <!-- END BILLING -->
                         <div class="tab-pane text-center px-sm-3 px-md-5" role="tabpanel" aria-labelledby="bootstrap-wizard-validation-tab4" id="bootstrap-wizard-validation-tab4">
                             <div class="wizard-lottie-wrapper">
                                 <div class="lottie wizard-lottie mx-auto my-3" data-options='{"path":"../../assets/img/animated-icons/celebration.json"}'></div>

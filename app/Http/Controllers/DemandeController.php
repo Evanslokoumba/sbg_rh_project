@@ -8,7 +8,7 @@ class DemandeController extends Controller
 {
     //
     public function creationFormulaire(){
-        return view('contenus.pages.creation-formulaire');
+        return view('contenus.pages.creation-demande');
     }
 
     public function statutValidee(){
