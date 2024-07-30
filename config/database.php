@@ -86,7 +86,7 @@ return [
             'url' => '',
             'host' => 'vm-owd-003',
             'port' => '1433',
-            'database' => 'rh_projet',
+            'database' => 'rhformation',
             'username' => 'adm',
             'password' => 'mix',
             'charset' => 'utf8mb4',
