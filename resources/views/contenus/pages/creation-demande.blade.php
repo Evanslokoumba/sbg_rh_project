@@ -40,26 +40,26 @@
                                                     <div class="col-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="bootstrap-wizard-validation-wizard-name" style="margin-bottom: -25%" >Nom(s) <span style="color: red">*</span></label>
-                                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre nom" required="required" id="bootstrap-wizard-validation-wizard-name" />
+                                                            <input class="form-control" type="text" name="name" placeholder="Entrer nom" required="required" id="bootstrap-wizard-validation-wizard-name" />
                                                             <div class="invalid-feedback">Champ obligatoire</div>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="bootstrap-wizard-validation-wizard-name" style="margin-bottom: -25%" >Prénom(s) <span style="color: red">*</span></label>
-                                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre prénom" required="required" id="bootstrap-wizard-validation-wizard-name" />
+                                                            <input class="form-control" type="text" name="name" placeholder="Entrer prénom" required="required" id="bootstrap-wizard-validation-wizard-name" />
                                                             <div class="invalid-feedback">Champ obligatoire</div>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="mb-3">
                                                             <label class="form-label" for="bootstrap-wizard-validation-wizard-name" style="margin-bottom: -25%" >Matricule <span style="color: red">*</span></label>
-                                                            <input class="form-control" type="text" name="name" placeholder="Saisir votre matricule" required="required" id="bootstrap-wizard-validation-wizard-name" />
+                                                            <input class="form-control" type="text" name="name" placeholder="Entrer matricule" required="required" id="bootstrap-wizard-validation-wizard-name" />
                                                             <div class="invalid-feedback">Champ obligatoire</div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <button class="btn btn-primary px-5 px-sm-6" ><span class="fas fa-plus"></span></button>
+                                                <button class="btn btn-primary px-3 px-sm-3" ><span class="fas fa-plus"></span></button>
                                                 <!-- FIN -->
                                             </div>
                                         </div>
