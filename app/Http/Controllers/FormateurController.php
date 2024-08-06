@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\cr;
+use App\Models\Formateur;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class RedirectionController extends Controller
+class FormateurController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //dd(Auth::user());
-
-        return view('contenus.pages.accueil');
+        //
     }
 
     /**
@@ -24,7 +21,6 @@ class RedirectionController extends Controller
     public function create()
     {
         //
-        return view('contenus.pages.connexion');
     }
 
     /**
@@ -38,7 +34,7 @@ class RedirectionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(cr $cr)
+    public function show(Formateur $formateur)
     {
         //
     }
@@ -46,7 +42,7 @@ class RedirectionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cr $cr)
+    public function edit(Formateur $formateur)
     {
         //
     }
@@ -54,7 +50,7 @@ class RedirectionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, cr $cr)
+    public function update(Request $request, Formateur $formateur)
     {
         //
     }
@@ -62,7 +58,7 @@ class RedirectionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cr $cr)
+    public function destroy(Formateur $formateur)
     {
         //
     }

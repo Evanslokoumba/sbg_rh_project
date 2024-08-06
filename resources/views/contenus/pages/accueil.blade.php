@@ -1,5 +1,6 @@
 @extends('contenus/mises-en-page/contenu')
 @section('bodycontent')
+
 <!--  CONTENUS AU CENTRE  -->
 <div class="row g-3 mb-3">
     <!-- quatre premiers blocs -->

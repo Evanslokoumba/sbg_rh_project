@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use App\Ldap\User;
-use App\Models\Acces_controle;
+//use App\Models\Acces_controle;
 //use App\Models\Main;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use LdapRecord\Laravel\Auth\MultiDomainAuthentication;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
@@ -19,6 +20,35 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    use AuthenticatesUsers;
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+    protected function credentials(Request $request)
+    {
+        //dd($request);
+        return [
+            'MATRICULE' => $request->get('email'),
+            'PWD' => $request->get('password')
+        ];
+    }
+
+    public function username()
+    {
+        return 'MATRICULE';
+    }
+
+    public function guard()
+    {
+
+        return $this->getLdapGuard();
+
+    }
+
+
     //
     public function seConnecter()
     {
@@ -27,14 +57,6 @@ class AuthController extends Controller
 
     public function traiterInfos(LoginRequest $request)
     {
-        $credentials    = [
-            'samaccountname'    =>  $request->get('email'),
-            'password'          =>  $request->get('password'),
-        ];
-
-        // On pointe vers la connexion ldap (annuaire à retrouver dans config/auth.php)
-        dd(Auth::shouldUse('ldap'));
-
         Auth::shouldUse('ldap');
 
         //Si l'utilisateur tente de se connecter avec les infos de l'AD, on verifie d'abord sa présence sur (Presonnel)
@@ -45,8 +67,8 @@ class AuthController extends Controller
             # code...Si l'utilisateur est bien présent sur la table (Présonnel)
             if (
                 $user instanceof \App\Models\User
-                && ($ldapuserTest   =   User::where('samaccountname',$request->get('email'))->first())
-                &&  $ldapuserTest   instanceof  User
+                && ($ldapuserTest   =   \LdapRecord\Models\OpenLDAP\User::where('samaccountname',$request->get('email'))->first())
+                &&  $ldapuserTest   instanceof  \LdapRecord\Models\OpenLDAP\User
             )
             {
 
@@ -58,7 +80,9 @@ class AuthController extends Controller
                 //Auth::attempt($credentials)   =   Tentative de connexion
                 if (Auth::attempt($credentials))
                 { //Si la tentative de connexion est concluante
-                    //dd('test de présence dans AD validé', Auth::user());
+
+                    //dd(Auth::attempt($credentials));
+
                     $rhUser = \App\Models\User2::where('Identifiant',$request->get('email'))->first();
 
 
@@ -71,16 +95,13 @@ class AuthController extends Controller
                             'POSTE' => $rhUser->Fonction,
                             'SITE' => $rhUser->Etablissement,
                         ]);
-                    /*
-                    Auth::login(\App\User::where('MATRICULE',$request->get('email'))->first());
 
-                    return redirect(RouteServiceProvider::HOME);
-                    */
                     Auth::shouldUse('web');
+
                     Auth::login(\App\Models\User::where('MATRICULE',$request->get('email'))->first());
 
-                    //return redirect()->action([AdminController::class, 'index']);
-                    return view('contenus/welcome');
+                    return redirect()->action([RedirectionController::class, 'index']);
+
 
                 }
                 else{
@@ -100,16 +121,13 @@ class AuthController extends Controller
                 {
                     # code...
                     //dd('OK sur RH');
-                    return view('contenus/pages/accueil');
+                    return redirect()->action([RedirectionController::class, 'index']);
                 }
                 //Récupérer le compte natif de l'uilisateur qui tente de se connecter
                 $nativieUser    =   \App\Models\User::where('MATRICULE',$request->get('email'))->get()->first();
-                //dd($nativieUser);
 
-                if($nativieUser   instanceof  User)
+                if($nativieUser   instanceof  \App\Models\User)
                 {// S'il a déjà un compte
-
-                    //$Mdp = \App\Models\User::where('MATRICULE',$request->get('email'))->get();
 
                     $credentials = [
                         'MATRICULE' => $request->get('email'),
@@ -134,12 +152,7 @@ class AuthController extends Controller
 
                         Auth::login(\App\Models\User::where('MATRICULE',$request->get('email'))->first());
 
-
-                        //dd('OK POUR LA WEB');
-                        //return redirect()->route('Index_Moul');
-                        //return view('home');
-                        //return redirect()->action([AdminController::class, 'index']);
-                        return view('contenus/pages/accueil');
+                        return redirect()->action([RedirectionController::class, 'index']);
                     }
                     else
                     {

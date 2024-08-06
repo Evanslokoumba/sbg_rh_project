@@ -16,10 +16,12 @@ use LdapRecord\Laravel\Auth\AuthenticatesWithLdap;
 
 class User extends Authenticatable implements LdapAuthenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable, AuthenticatesWithLdap, HasLdapUser  ;
+    use CanAuthenticate, HasApiTokens, HasFactory, Notifiable, AuthenticatesWithLdap, HasLdapUser  ;
     /**
      * The object classes of the LDAP model.
      */
+    //protected $connection = 'default';
+
     public static array $objectClasses = [
 
             'top',

@@ -2,13 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AgentRh;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class DemandeController extends Controller
 {
     //
     public function creationFormulaire(){
-        return view('contenus.pages.creation-demande');
+        $agents = AgentRh::all();
+        $listeDirection = User::all();
+
+        //dd($listeDirection);
+
+        return view('contenus.pages.creation-demande',compact('listeDirection'));
     }
 
     public function statutValidee(){

@@ -14,13 +14,16 @@ return new class extends Migration
         Schema::create('formations', function (Blueprint $table) {
             $table->bigIncrements('ID');
             $table->string('TITRE');
-            $table->string('FORMATEUR');
             $table->string('DESCRIPTION');
             $table->string('MATRICULE_DEMANDEUR');
-            $table->string('PERIODE');
+            $table->string('MOIS');
             $table->string('SITE');
+            $table->string('SERVICE');
+            $table->string('DIRECTION');
             $table->string('TYPE_FORMATEUR');
+            $table->string('ID_FORMATEUR');
             $table->string('FORMATEUR');
+            $table->integer('STATUT');
             $table->timestamps();
         });
     }
