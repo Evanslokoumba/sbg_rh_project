@@ -2,9 +2,13 @@
 /node_modules
 /public/build
 /vendor
-/public/theme/public
-!/public/theme/public/assets
-!/public/theme/public/vendors
+/public/theme/public/app
+/public/theme/public/dashboard
+/public/theme/public/demo
+/public/theme/public/documentation
+/public/theme/public/modules
+/public/theme/public/pages
+/public/theme/public/*.html
 .env.backup
 Homestead.json
 Homestead.yaml
