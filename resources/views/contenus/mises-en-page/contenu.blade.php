@@ -15,10 +15,10 @@
         <!-- ===============================================-->
         <link rel="shortcut icon" type="image/x-icon" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
         <link rel="manifest" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
-        <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+        <meta name="msapplication-TileImage" content="rh/assets/img/favicons/mstile-150x150.png">
         <meta name="theme-color" content="#ffffff">
         <script src="{{asset('rh/assets/js/config.js')}}"></script>
-        <script src="vendors/simplebar/simplebar.min.js"></script>
+        <script src="rh/vendors/simplebar/simplebar.min.js"></script>
 
 
         <!-- ===============================================-->
@@ -26,11 +26,12 @@
         <!-- ===============================================-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-        <link href="vendors/simplebar/simplebar.min.css" rel="stylesheet">
-        <link href="assets/css/theme-rtl.css" rel="stylesheet" id="style-rtl">
+        <link href="rh/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+        <link href="rh/assets/css/theme-rtl.css" rel="stylesheet" id="style-rtl">
         <link href="{{asset('rh/assets/css/theme.css')}}" rel="stylesheet" id="style-default">
-        <link href="assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
-        <link href="assets/css/user.css" rel="stylesheet" id="user-style-default">
+        <link href="rh/assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
+        <link href="rh/assets/css/user.css" rel="stylesheet" id="user-style-default">
+        <link href="css/normalize.css" rel="stylesheet" id="user-style-default">
         <script>
         var isRTL = JSON.parse(localStorage.getItem('isRTL'));
         if (isRTL) {
@@ -84,29 +85,27 @@
 
 
                         <li class="nav-item">
-                            <!-- parent pages--><a class="nav-link dropdown-indicator" href="#dashboard" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dashboard">
-                            <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">Tableau de bord</span>
-                            </div>
+                            <!-- parent pages-->
+                            <a class="nav-link dropdown-indicator" href="#dashboard" role="button" data-bs-toggle="collapse" aria-expanded="true" aria-controls="dashboard">
+                                <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-chart-pie"></span></span><span class="nav-link-text ps-1">Tableau de bord</span>
+                                </div>
                             </a>
                             <ul class="nav collapse show" id="dashboard">
-                            <li class="nav-item"><a class="nav-link active" href="{{url('accueil_page')}}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page accueil</span>
-                                </div>
-                                </a>
-                                <!-- more inner pages-->
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="{{url('connexion-page')}}">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page connexion</span>
-                                </div>
-                                </a>
-                                <!-- more inner pages-->
-                            </li>
-                            <li class="nav-item"><a class="nav-link" href="/test_pageII">
-                                <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page II</span>
-                                </div>
-                                </a>
-                                <!-- more inner pages-->
-                            </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="{{url('accueil_page')}}">
+                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page accueil</span></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('connexion-page')}}">
+                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page connexion</span></div>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/test_pageII">
+                                        <div class="d-flex align-items-center"><span class="nav-link-text ps-1">Test page II</span></div>
+                                    </a>
+                                </li>
                             </ul>
                         </li>
 
@@ -128,19 +127,23 @@
                                 <span class="nav-link-icon">
                                     <span class="fas fa-file-alt"></span>
                                 </span>
-                                <span class="nav-link-text ps-1">Lancer demande</span>
+                                <span class="nav-link-text ps-1">Demandes de formation</span>
                             </div>
                             </a>
                             <ul class="nav collapse" id="demande">
-                                <li class="nav-item"><a class="nav-link" href="{{url('/creation-formulaire')}}">
-                                    <div class="d-flex align-items-center">
-                                        <span class="nav-link-icon">
-                                            <span class="fas fa-edit"></span>
-                                        </span>
-                                        <span class="nav-link-text ps-1">Créer demande</span>
-                                    </div>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/creation-formulaire')}}">
+                                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-plus"></span></span>
+                                            <span class="nav-link-text ps-1">nouvelle demande</span>
+                                        </div>
                                     </a>
-                                    <!-- more inner pages-->
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/demande-en-édition')}}">
+                                        <div class="d-flex align-items-center"><span class="nav-link-icon"><span class="fas fa-edit"></span></span>
+                                            <span class="nav-link-text ps-1">demandes en édition</span>
+                                        </div>
+                                    </a>
                                 </li>
                             </ul>
 

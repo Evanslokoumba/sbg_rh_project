@@ -13,8 +13,6 @@ class RedirectionController extends Controller
      */
     public function index()
     {
-        //dd(Auth::user());
-
         return view('contenus.pages.accueil');
     }
 

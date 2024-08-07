@@ -2,6 +2,7 @@
 /node_modules
 /public/build
 /vendor
+/public/theme/public
 .env.backup
 Homestead.json
 Homestead.yaml

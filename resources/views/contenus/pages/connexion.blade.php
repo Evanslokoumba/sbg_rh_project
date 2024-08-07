@@ -15,36 +15,41 @@
         <!-- ===============================================-->
         <link rel="shortcut icon" type="image/x-icon" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
         <link rel="manifest" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
-        <meta name="msapplication-TileImage" content="assets/img/favicons/mstile-150x150.png">
+        <meta name="msapplication-TileImage" content="rh/assets/img/favicons/mstile-150x150.png">
         <meta name="theme-color" content="#ffffff">
-        <script src="{{asset('rh/assets/js/config.js')}}"></script>
-        <script src="vendors/simplebar/simplebar.min.js"></script>
-
+        <script src="rh/assets/js/config.js"></script>
+        <script src="rh/vendors/simplebar/simplebar.min.js"></script>
 
         <!-- ===============================================-->
         <!--    Stylesheets-->
         <!-- ===============================================-->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap" rel="stylesheet">
-        <link href="vendors/simplebar/simplebar.min.css" rel="stylesheet">
-        <link href="assets/css/theme-rtl.css" rel="stylesheet" id="style-rtl">
-        <link href="{{asset('rh/assets/css/theme.css')}}" rel="stylesheet" id="style-default">
-        <link href="assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
-        <link href="assets/css/user.css" rel="stylesheet" id="user-style-default">
+        <link href="rh/vendors/simplebar/simplebar.min.css" rel="stylesheet">
+        <link href="rh/assets/css/theme-rtl.css" rel="stylesheet" id="style-rtl">
+        <link href="rh/assets/css/theme.css" rel="stylesheet" id="style-default">
+        <link href="rh/assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
+        <link href="rh/assets/css/user.css" rel="stylesheet" id="user-style-default">
+        <style>
+            label{
+                padding: 0;
+                margin: 0;
+            }
+        </style>
         <script>
-        var isRTL = JSON.parse(localStorage.getItem('isRTL'));
-        if (isRTL) {
-            var linkDefault = document.getElementById('style-default');
-            var userLinkDefault = document.getElementById('user-style-default');
-            linkDefault.setAttribute('disabled', true);
-            userLinkDefault.setAttribute('disabled', true);
-            document.querySelector('html').setAttribute('dir', 'rtl');
-        } else {
-            var linkRTL = document.getElementById('style-rtl');
-            var userLinkRTL = document.getElementById('user-style-rtl');
-            linkRTL.setAttribute('disabled', true);
-            userLinkRTL.setAttribute('disabled', true);
-        }
+            var isRTL = JSON.parse(localStorage.getItem('isRTL'));
+            if (isRTL) {
+                var linkDefault = document.getElementById('style-default');
+                var userLinkDefault = document.getElementById('user-style-default');
+                linkDefault.setAttribute('disabled', true);
+                userLinkDefault.setAttribute('disabled', true);
+                document.querySelector('html').setAttribute('dir', 'rtl');
+            } else {
+                var linkRTL = document.getElementById('style-rtl');
+                var userLinkRTL = document.getElementById('user-style-rtl');
+                linkRTL.setAttribute('disabled', true);
+                userLinkRTL.setAttribute('disabled', true);
+            }
         </script>
     </head>
     <body>
@@ -61,7 +66,7 @@
                         container.classList.add('container-fluid');
                     }
                 </script>
-                <div class="row flex-center min-vh-100 py-6">
+                <div class="row flex-center min-vh-100">
                     <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
                         <a class="d-flex flex-center mb-4" >
                             <img class="me-2" src="{{asset('rh/assets/img/x.png')}}" alt="" width="170" />
@@ -76,22 +81,21 @@
                                     <p class="mb-0 fs--1 text-white opacity-75">Veuillez-vous connecter s'il vous plaît</p>
                                 </div>
                             </div>
-                            <div class="card-body p-4 p-sm-5">
-                            
-                                <div class="row flex-between-center mb-2">
-                                    
+                            <div class="card-body">
+
+                                <div class="row flex-between-center">
                                     <div class="col-auto fs--1 text-600"><span class="mb-0 undefined">or</span> <span><a href="/test_accueil">Test accueil</a></span></div>
                                 </div>
                                     <form action="{{route('auth.login')}}" method="post" >
                                         @csrf
-                                        <div class="mb-3">
+                                        <div class="mb-2">
                                             <label for="email">Matricule</label>
                                             <input class="form-control" type="text" id="email" name="email" placeholder="Insérer votre matricule" />
                                             @error('email')
                                                 {{$message}}
                                             @enderror
                                         </div>
-                                        <div class="mb-3">
+                                        <div class="">
                                             <label for="password">Mot de passe</label>
                                             <input class="form-control" type="password" id="password" name="password" placeholder="Insérer votre mot de passe" />
                                             @error('password')
@@ -131,15 +135,15 @@
         <!-- ===============================================-->
         <!--    JavaScripts-->
         <!-- ===============================================-->
-        <script src="{{asset('rh/vendors/popper/popper.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/bootstrap/bootstrap.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/anchorjs/anchor.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/is/is.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/echarts/echarts.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/fontawesome/all.min.js')}}"></script>
-        <script src="{{asset('rh/vendors/lodash/lodash.min.js')}}"></script>
+        <script src="rh/vendors/popper/popper.min.js"></script>
+        <script src="rh/vendors/bootstrap/bootstrap.min.js"></script>
+        <script src="rh/vendors/anchorjs/anchor.min.js"></script>
+        <script src="rh/vendors/is/is.min.js"></script>
+        <script src="rh/vendors/echarts/echarts.min.js"></script>
+        <script src="rh/vendors/fontawesome/all.min.js"></script>
+        <script src="rh/vendors/lodash/lodash.min.js"></script>
         <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-        <script src="{{asset('rh/vendors/list.js/list.min.js')}}"></script>
-        <script src="{{asset('rh/assets/js/theme.js')}}"></script>
+        <script src="rh/vendors/list.js/list.min.js"></script>
+        <script src="rh/assets/js/theme.js"></script>
     </body>
 </html>

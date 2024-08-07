@@ -31,6 +31,9 @@ Route::get('/test_pageII', function () {
 //Route test
 Route::get('/connexion-page', [RedirectionController::class, 'create']);
 Route::get('/accueil_page', [RedirectionController::class, 'index']);
+Route::get('/accueil', function (){
+    return view('goals-performs.content-layout');
+});
 
 
 #Route authentifications

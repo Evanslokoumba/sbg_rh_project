@@ -2,26 +2,13 @@
 
 namespace App\Ldap;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
-use LdapRecord\Models\Model;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable;
 use LdapRecord\Models\Concerns\CanAuthenticate;
-use App\Models\User2;
+use LdapRecord\Models\Model;
 
-use LdapRecord\Laravel\Auth\HasLdapUser;
-use LdapRecord\Laravel\Auth\LdapAuthenticatable;
-use LdapRecord\Laravel\Auth\AuthenticatesWithLdap;
-
-class User extends Authenticatable implements LdapAuthenticatable
+class User extends Model implements Authenticatable
 {
-    use CanAuthenticate, HasApiTokens, HasFactory, Notifiable, AuthenticatesWithLdap, HasLdapUser  ;
-    /**
-     * The object classes of the LDAP model.
-     */
-    //protected $connection = 'default';
-
+    use CanAuthenticate;
     public static array $objectClasses = [
 
             'top',
@@ -30,4 +17,34 @@ class User extends Authenticatable implements LdapAuthenticatable
             'user',
 
     ];
+
+    public function getAuthIdentifierName()
+    {
+        // TODO: Implement getAuthIdentifierName() method.
+    }
+
+    public function getAuthIdentifier()
+    {
+        // TODO: Implement getAuthIdentifier() method.
+    }
+
+    public function getAuthPassword()
+    {
+        // TODO: Implement getAuthPassword() method.
+    }
+
+    public function getRememberToken()
+    {
+        // TODO: Implement getRememberToken() method.
+    }
+
+    public function setRememberToken($value)
+    {
+        // TODO: Implement setRememberToken() method.
+    }
+
+    public function getRememberTokenName()
+    {
+        // TODO: Implement getRememberTokenName() method.
+    }
 }
