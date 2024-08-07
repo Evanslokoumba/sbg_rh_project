@@ -3,6 +3,8 @@
 /public/build
 /vendor
 /public/theme/public
+!/public/theme/public/assets
+!/public/theme/public/vendors
 .env.backup
 Homestead.json
 Homestead.yaml
