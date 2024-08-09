@@ -28,6 +28,23 @@
         </li>
     </ul>
     <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+        <p class="mt-3">
+            {{$infosUserNom}}
+        </p>
+        <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="avatar avatar-xl">
+                    <span class="fas fa-user fa-2x"></span>
+                </div>
+            </a>
+            <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
+                <div class="bg-white dark__bg-1000 rounded-2 py-2">
+                    <a class="dropdown-item" href="javascript:;">profil et compte</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="javascript:;">réglages</a>
+                    <a class="dropdown-item" href="javascript:;">déconnexion</a>
+                </div>
+            </div>
+        </li>
         <li class="nav-item ps-2 pe-0">
             <div class="dropdown theme-control-dropdown"><a class="nav-link d-flex align-items-center dropdown-toggle fa-icon-wait fs-0 pe-1 py-0" href="#" role="button" id="themeSwitchDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="fas fa-sun fs-2" data-fa-transform="shrink-2" data-theme-dropdown-toggle-icon="light"></span><span class="fas fa-moon fs-2" data-fa-transform="shrink-3" data-theme-dropdown-toggle-icon="dark"></span><span class="fas fa-adjust fs-2" data-fa-transform="shrink-2" data-theme-dropdown-toggle-icon="auto"></span></a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-caret border py-0 mt-3" aria-labelledby="themeSwitchDropdown">
@@ -59,20 +76,6 @@
                 </div>
             </div>
 
-        </li>
-        <li class="nav-item dropdown"><a class="nav-link pe-0 ps-2" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div class="avatar avatar-xl">
-                    <img class="rounded-circle" src="theme/public/assets/img/team/3-thumb.png" alt="" />
-                </div>
-            </a>
-            <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0" aria-labelledby="navbarDropdownUser">
-                <div class="bg-white dark__bg-1000 rounded-2 py-2">
-                    <a class="dropdown-item" href="javascript:;">profil et compte</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="javascript:;">réglages</a>
-                    <a class="dropdown-item" href="javascript:;">déconnexion</a>
-                </div>
-            </div>
         </li>
     </ul>
 </nav>

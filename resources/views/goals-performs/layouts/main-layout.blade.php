@@ -8,23 +8,19 @@
 
 
     <!-- ===============================================-->
-    <!--    Document Title-->
-    <!-- ===============================================-->
-    <title>Falcon | Dashboard &amp; Web App Template</title>
-
-
-    <!-- ===============================================-->
-    <!--    Favicons-->
-    <!-- ===============================================-->
-    <link rel="apple-touch-icon" sizes="180x180" href="theme/public/assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="theme/public/assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="theme/public/assets/img/favicons/favicon-16x16.png">
-    <link rel="shortcut icon" type="image/x-icon" href="theme/public/assets/img/favicons/favicon.ico">
-    <link rel="manifest" href="theme/public/assets/img/favicons/manifest.json">
-    <meta name="msapplication-TileImage" content="theme/public/assets/img/favicons/mstile-150x150.png">
-    <meta name="theme-color" content="#ffffff">
-    <script src="theme/public/assets/js/config.js"></script>
-    <script src="theme/public/vendors/simplebar/simplebar.min.js"></script>
+        <!--    Document Title-->
+        <!-- ===============================================-->
+        <title>RH | Demandes &amp; Formations</title>
+        <!-- ===============================================-->
+        <!--    Favicons-->
+        <!-- ===============================================-->
+        <link rel="shortcut icon" type="image/x-icon" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
+        <link rel="manifest" href="https://castel-gabon.sobraga.bgi/apps/img/sbg.png">
+        <meta name="msapplication-TileImage" content="rh/assets/img/favicons/mstile-150x150.png">
+        <meta name="theme-color" content="#ffffff">
+        <script src="{{asset('rh/assets/js/config.js')}}"></script>
+        <script src="rh/vendors/simplebar/simplebar.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 
     <!-- ===============================================-->
@@ -38,6 +34,16 @@
     <link href="theme/public/assets/css/user-rtl.css" rel="stylesheet" id="user-style-rtl">
     <link href="theme/public/assets/css/user.css" rel="stylesheet" id="user-style-default">
     <link href="css/normalize.css" rel="stylesheet" id="user-style-default">
+   
+    <!--
+    <script>
+     $(window).load(function(){        
+        $('#myModal').modal('show');
+    }); 
+    </script>
+    -->
+
+
     <script>
         var isRTL = JSON.parse(localStorage.getItem('isRTL'));
         if (isRTL) {
@@ -77,6 +83,37 @@
             <div class="page-body mt-2">
                 @yield('page-body')
             </div>
+        </div>
+    </div>
+
+    <!-- Modal  -->
+    <div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
+        <div class="modal-content position-relative">
+            <div class="position-absolute top-0 end-0 mt-2 me-2 z-1">
+            <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+            <div class="rounded-top-3 py-3 ps-4 pe-6 bg-body-tertiary">
+                <h6 class="mb-1" id="modalExampleDemoLabel">Informations - Formation </h6>
+            </div>
+            <div class="p-4 pb-0">
+                <form>
+                <div class="mb-3">
+                    <label class="col-form-label" for="recipient-name">Titre de la formation:</label>
+                    <input class="form-control" id="recipient-name" type="text" />
+                </div>
+                <div class="mb-3">
+                    <label class="col-form-label" for="message-text">Description de la formation:</label>
+                    <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                </form>
+            </div>
+            </div>
+            <div class="modal-footer">
+            <button class="btn btn-primary" type="button">Enregistrer </button>
+            </div>
+        </div>
         </div>
     </div>
 </main>

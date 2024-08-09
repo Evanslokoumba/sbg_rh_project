@@ -13,7 +13,15 @@ class RedirectionController extends Controller
      */
     public function index()
     {
-        return view('contenus.pages.accueil');
+        //dd(Auth::user());
+        if (Auth::check()) {
+            $infosUser = Auth::user();
+            # code...
+
+             //return view('contenus.pages.accueil');goals-performs.content-layout
+        return view('goals-performs.content-layout',compact('infosUser'));
+        }
+       
     }
 
     /**

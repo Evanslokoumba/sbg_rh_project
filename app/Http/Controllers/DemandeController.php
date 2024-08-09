@@ -5,17 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\AgentRh;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class DemandeController extends Controller
 {
     //
     public function creationFormulaire(){
-        $agents = AgentRh::all();
-        $listeDirection = User::all();
 
-        //dd($listeDirection);
+        //dd(Auth::user());
+    if (Auth::check()) 
+    {
+        $listDirection = AgentRh::where('Departement','=','DFI')->get();
+        //dd($listDirection);
+        $libelleFormulaire = "Demandez une formation";
+        $libelleCard1 = "Agent à former";
+        $infosUserNom = Auth::user()->NOM;
 
-        return view('contenus.pages.creation-demande',compact('listeDirection'));
+    //return view('contenus.pages.accueil');goals-performs.content-layout
+    return view('goals-performs.create-form-layout',compact('infosUserNom','libelleFormulaire','libelleCard1','listDirection'));
+    }
     }
 
     public function statutValidee(){

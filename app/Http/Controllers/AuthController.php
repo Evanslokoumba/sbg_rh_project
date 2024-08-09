@@ -63,6 +63,7 @@ class AuthController extends Controller
                 &&  $ldapuserTest   instanceof  LdapUser
             )
             {
+                //dd($ldapuserTest); Vérification de la présence du user sur l' AD
 
                 $credentials = [
                     'samaccountname'    =>  $request->get('email'),
